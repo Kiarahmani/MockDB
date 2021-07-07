@@ -16,7 +16,8 @@ mockdb::kv_store<std::string, web::json::value> *store;
 user u("dip", 1);
 
 // For fixed run
-std::vector<int> assert_counter(6, 0);
+std::vector<int> assert_counter(6, 0);   // kia: is used to keep track of violations (?)
+                                         // int violation_count = assert_counter[1];
 std::vector<int> results = {0, 0, 0, 0};
 
 std::vector<std::vector<int>> serial_results = {
