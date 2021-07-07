@@ -1,2 +1,6 @@
 Here is a SO post to help build the libs for m1 chip:
 https://stackoverflow.com/questions/67386941/using-x86-libraries-and-openmp-on-macos-arm64-architecture
+
+
+to run the scripts under X86 arch:
+arch -x86_64 zsh

@@ -12,6 +12,10 @@ endif()
 
 find_package(cpprestsdk REQUIRED)
 
+
+# integer_counter
+add_executable(integer_counter_app integer_counter/run_integer_counter.cpp utils.h utils.cpp app_config.h integer_counter/integer_counter.h integer_counter/user.h)
+
 # courseware
 add_executable(courseware_app courseware/run_courseware.cpp utils.h utils.cpp app_config.h courseware/course.h courseware/student.h courseware/courseware.h)
 
@@ -27,6 +31,7 @@ add_executable(stack_app treiber_stack/run_stack.cpp utils.h utils.cpp app_confi
 
 target_link_libraries(courseware_app mock_kv_store cpprestsdk::cpprest)
 target_link_libraries(shopping_cart_app mock_kv_store cpprestsdk::cpprest)
+target_link_libraries(integer_counter_app mock_kv_store cpprestsdk::cpprest)
 target_link_libraries(twitter_app mock_kv_store cpprestsdk::cpprest)
 target_link_libraries(stack_app mock_kv_store cpprestsdk::cpprest)
 
@@ -35,11 +40,13 @@ if(MSVC)
     target_compile_options(shopping_cart_app PUBLIC /W4)
     target_compile_options(twitter_app PUBLIC /W4)
     target_compile_options(stack_app PUBLIC /W4)
+    target_compile_options(integer_counter_app PUBLIC /W4)
 else()
     target_compile_options(courseware_app PUBLIC -Wall -Wextra -pedantic)
     target_compile_options(shopping_cart_app PUBLIC -Wall -Wextra -pedantic)
     target_compile_options(twitter_app PUBLIC -Wall -Wextra -pedantic)
     target_compile_options(stack_app PUBLIC -Wall -Wextra -pedantic)
+    target_compile_options(integer_counter_app PUBLIC -Wall -Wextra -pedantic)
 endif()
 
 if (MSVC AND (MSVC_VERSION GREATER 1900))

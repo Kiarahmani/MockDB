@@ -6,4 +6,7 @@ cd build-files/
 cmake ../ > log.txt
 
 # Build applications
-cmake --build ./ --target courseware_app shopping_cart_app twitter_app stack_app > app_log.txt
+#export CC=/usr/local/opt/llvm/bin/clang  
+#export CXX=/usr/local/opt/llvm/bin/clang++
+
+cmake --build ./ --target integer_counter_app > app_log.txt
